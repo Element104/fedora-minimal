@@ -58,6 +58,7 @@ Summary:	Keeps libreport off
 Conflicts:	libreport
 Conflicts:	python-augeas
 Conflicts:	fros
+Conflicts:	satyr
 %description	conflicts-libreport
 Conflicts with libreport and its dependencies.
 
