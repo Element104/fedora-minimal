@@ -10,6 +10,7 @@ BuildArch:	noarch
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-openlmi
+Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-misc
 
 %description
@@ -61,9 +62,14 @@ Conflicts:	sg3_utils
 Conflicts:	tog-pegasus-libs
 # Then libs for cim over http
 Conflicts:	pywbem
-
 %description	conflicts-openlmi
 Conflicts with OpenLMI set of packages
+
+%package	conflicts-setroubleshoot
+Summary:	Keeps setroubleshoot off
+Conflicts:	setroubleshoot-server
+%description	conflicts-setroubleshoot
+Conflicts with setroubleshoot packages.
 
 %prep
 
@@ -77,6 +83,7 @@ Conflicts with OpenLMI set of packages
 %files		conflicts-anaconda
 %files		conflicts-gnome
 %files		conflicts-openlmi
+%files		conflicts-setroubleshoot
 
 %changelog
 
