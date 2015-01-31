@@ -35,6 +35,8 @@ Conflicts with ABRT set of packages.
 %package	conflicts-anaconda
 Summary:	Keeps the installer off
 Conflicts:	anaconda-core anaconda-widgets
+# brought in by anaconda
+Conflicts:	tigervnc-server-minimal
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
