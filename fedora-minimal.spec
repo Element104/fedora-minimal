@@ -41,6 +41,16 @@ Conflicts:	libtimezonemap
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
+%package	conflicts-gnome
+Summary:	Keeps some unneeded Gnome packages off
+# brought in by anaconda
+Conflicts:	libgnomekbd
+Conflicts:	libxklavier
+Conflicts:	keybinder3
+Conflicts:	zenity
+%description	conflicts-gnome
+Conflicts with Gnome packages that are not really needed.
+
 %package	conflicts-openlmi
 Summary:	Keeps OpenLMI off
 Conflicts:	cim-schema
@@ -65,6 +75,7 @@ Conflicts with OpenLMI set of packages
 %files		conflicts-misc
 %files		conflicts-abrt
 %files		conflicts-anaconda
+%files		conflicts-gnome
 %files		conflicts-openlmi
 
 %changelog
