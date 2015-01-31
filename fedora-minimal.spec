@@ -36,6 +36,9 @@ Summary:	Keeps OpenLMI off
 Conflicts:	openlmi
 # brought in by openlmi-storage
 Conflicts:	sg3_utils
+# Then the cim-server and its libs
+Conflicts:	tog-pegasus-libs
+
 %description	conflicts-openlmi
 Conflicts with OpenLMI set of packages
 
