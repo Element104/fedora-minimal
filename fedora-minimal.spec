@@ -33,6 +33,7 @@ Conflicts with ABRT set of packages.
 
 %package	conflicts-openlmi
 Summary:	Keeps OpenLMI off
+Conflicts:	cim-schema
 Conflicts:	openlmi
 # brought in by openlmi-storage
 Conflicts:	sg3_utils
