@@ -39,6 +39,8 @@ Conflicts:	openlmi
 Conflicts:	sg3_utils
 # Then the cim-server and its libs
 Conflicts:	tog-pegasus-libs
+# Then libs for cim over http
+Conflicts:	pywbem
 
 %description	conflicts-openlmi
 Conflicts with OpenLMI set of packages
