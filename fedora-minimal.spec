@@ -7,6 +7,7 @@ Group:		System Environment/Base
 License:	GPLv2
 URL:		https://github.com/isimluk/fedora-minimal
 BuildArch:	noarch
+Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-misc
 
 %description
@@ -21,6 +22,12 @@ Conflicts:	NetworkManager-config-connectivity-fedora
 %description	conflicts-misc
 Conflicts with miscellaneous packages.
 
+%package	conflicts-abrt
+Summary:	Keeps ABRT out of your box
+Conflicts:	abrt-libs
+%description	conflicts-abrt
+Conflicts with ABRT set of packages.
+
 %prep
 
 %build
@@ -29,6 +36,7 @@ Conflicts with miscellaneous packages.
 
 %files
 %files		conflicts-misc
+%files		conflicts-abrt
 
 %changelog
 
