@@ -37,6 +37,7 @@ Summary:	Keeps the installer off
 Conflicts:	anaconda-core anaconda-widgets
 # brought in by anaconda
 Conflicts:	tigervnc-server-minimal
+Conflicts:	libtimezonemap
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
