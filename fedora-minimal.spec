@@ -9,6 +9,7 @@ URL:		https://github.com/isimluk/fedora-minimal
 BuildArch:	noarch
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
+Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-misc
@@ -52,6 +53,14 @@ Conflicts:	zenity
 %description	conflicts-gnome
 Conflicts with Gnome packages that are not really needed.
 
+%package	conflicts-libreport
+Summary:	Keeps libreport off
+Conflicts:	libreport
+Conflicts:	python-augeas
+Conflicts:	fros
+%description	conflicts-libreport
+Conflicts with libreport and its dependencies.
+
 %package	conflicts-openlmi
 Summary:	Keeps OpenLMI off
 Conflicts:	cim-schema
@@ -82,6 +91,7 @@ Conflicts with setroubleshoot packages.
 %files		conflicts-abrt
 %files		conflicts-anaconda
 %files		conflicts-gnome
+%files		conflicts-libreport
 %files		conflicts-openlmi
 %files		conflicts-setroubleshoot
 
