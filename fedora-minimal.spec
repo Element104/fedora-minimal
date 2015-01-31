@@ -8,6 +8,7 @@ License:	GPLv2
 URL:		https://github.com/isimluk/fedora-minimal
 BuildArch:	noarch
 Requires:	%{name}-conflicts-abrt
+Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-misc
 
@@ -24,12 +25,18 @@ Conflicts:	NetworkManager-config-connectivity-fedora
 Conflicts with miscellaneous packages.
 
 %package	conflicts-abrt
-Summary:	Keeps ABRT out off
+Summary:	Keeps ABRT off
 Conflicts:	abrt-libs
 # brought in by abrt-addon-vmcore
 Conflicts:	kexec-tools
 %description	conflicts-abrt
 Conflicts with ABRT set of packages.
+
+%package	conflicts-anaconda
+Summary:	Keeps the installer off
+Conflicts:	anaconda-core anaconda-widgets
+%description	conflicts-anaconda
+Conflicts with Anaconda installer and its dependencies.
 
 %package	conflicts-openlmi
 Summary:	Keeps OpenLMI off
@@ -54,6 +61,7 @@ Conflicts with OpenLMI set of packages
 %files
 %files		conflicts-misc
 %files		conflicts-abrt
+%files		conflicts-anaconda
 %files		conflicts-openlmi
 
 %changelog
