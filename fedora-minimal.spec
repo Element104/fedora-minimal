@@ -25,6 +25,8 @@ Conflicts with miscellaneous packages.
 %package	conflicts-abrt
 Summary:	Keeps ABRT out of your box
 Conflicts:	abrt-libs
+# brougt by abrt-addon-vmcore
+Conflicts:	kexec-tools
 %description	conflicts-abrt
 Conflicts with ABRT set of packages.
 
