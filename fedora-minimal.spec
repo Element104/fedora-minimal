@@ -100,6 +100,16 @@ Conflicts:	xorg-x11-drv-vmware
 %description	conflicts-vmguest
 Conflicts with packages related to VM guests.
 
+%package	conflicts-extra
+Summary:	Extra conflicts that you may found useful
+Conflicts:	jack-audio-connection-kit-example-clients
+Conflicts:	nano
+Conflicts:	sos
+Conflicts:	setuptool
+%description	conflicts-extra
+Conflicts with the packages that I yet have to find useful.
+These were installed by various repogroups or anaconda.
+
 %prep
 
 %build
@@ -107,7 +117,6 @@ Conflicts with packages related to VM guests.
 %install
 
 %files
-%files		conflicts-misc
 %files		conflicts-abrt
 %files		conflicts-anaconda
 %files		conflicts-gnome
@@ -115,6 +124,8 @@ Conflicts with packages related to VM guests.
 %files		conflicts-openlmi
 %files		conflicts-setroubleshoot
 %files		conflicts-vmguest
+%files		conflicts-misc
+%files		conflicts-extra
 
 %changelog
 
