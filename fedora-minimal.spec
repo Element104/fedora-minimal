@@ -12,6 +12,7 @@ Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-setroubleshoot
+Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
 
 %description
@@ -89,6 +90,14 @@ Conflicts:	setroubleshoot-server
 %description	conflicts-setroubleshoot
 Conflicts with setroubleshoot packages.
 
+%package	conflicts-vmguest
+Summary:	Keeps vm guest tools off
+Conflicts:	spice-vdagent
+Conflicts:	qemu-guest-agent
+Conflicts:	open-vm-tools
+%description	conflicts-vmguest
+Conflicts with packages related to VM guests.
+
 %prep
 
 %build
@@ -103,6 +112,7 @@ Conflicts with setroubleshoot packages.
 %files		conflicts-libreport
 %files		conflicts-openlmi
 %files		conflicts-setroubleshoot
+%files		conflicts-vmguest
 
 %changelog
 
