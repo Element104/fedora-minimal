@@ -49,6 +49,7 @@ Conflicts:	device-mapper-multipath
 Conflicts:	libhbaapi
 Conflicts:	lldpad
 Conflicts:	fcoe-utils
+Conflicts:	pykickstart
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
