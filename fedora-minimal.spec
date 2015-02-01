@@ -40,6 +40,14 @@ Conflicts:	anaconda-core anaconda-widgets
 # brought in by anaconda
 Conflicts:	tigervnc-server-minimal
 Conflicts:	libtimezonemap
+Conflicts:	python-blivet
+Conflicts:	python-cryptsetup
+Conflicts:	python-pyblock
+Conflicts:	pyparted
+Conflicts:	device-mapper-multipath
+Conflicts:	libhbaapi
+Conflicts:	lldpad
+Conflicts:	fcoe-utils
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
