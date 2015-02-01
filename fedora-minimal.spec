@@ -95,6 +95,7 @@ Summary:	Keeps vm guest tools off
 Conflicts:	spice-vdagent
 Conflicts:	qemu-guest-agent
 Conflicts:	open-vm-tools
+Conflicts:	xorg-x11-drv-vmware
 %description	conflicts-vmguest
 Conflicts with packages related to VM guests.
 
