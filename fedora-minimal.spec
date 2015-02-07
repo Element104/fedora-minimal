@@ -10,6 +10,7 @@ BuildArch:	noarch
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-cockpit
+Requires:	%{name}-conflicts-dnf
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-setroubleshoot
@@ -61,6 +62,16 @@ Conflicts:	storaged
 %description	conflicts-cockpit
 Conflicts with cockpit packages. Cockpit is another useful tool
 that I don't really need.
+
+%package	conflicts-dnf
+Summary:	Keeps DNF off
+# this one pretty much does it
+Conflicts:	dnf
+Conflicts:	hawkey
+Conflicts:	libsolv
+%description	conflicts-dnf
+Conflicts with DNF and rpm-ostree. Don't take me wrong, I think
+dnf is the future, I just happen to use yum at this point.
 
 %package	conflicts-gnome
 Summary:	Keeps some unneeded Gnome packages off
@@ -130,6 +141,7 @@ These were installed by various repogroups or anaconda.
 %files		conflicts-abrt
 %files		conflicts-anaconda
 %files		conflicts-cockpit
+%files		conflicts-dnf
 %files		conflicts-gnome
 %files		conflicts-libreport
 %files		conflicts-openlmi
