@@ -12,6 +12,7 @@ Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-dnf
 Requires:	%{name}-conflicts-docker
+Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-packagekit
@@ -95,6 +96,13 @@ Conflicts:	accountsservice-libs
 %description	conflicts-gnome
 Conflicts with Gnome packages that are not really needed.
 
+%package	conflicts-languages
+Summary:	Keeps non english language support off
+Conflicts:	system-config-language
+Conflicts:	libkkc
+%description	conflicts-languages
+Conflicts wtih various packages related to internatialization.
+
 %package	conflicts-libreport
 Summary:	Keeps libreport off
 Conflicts:	libreport
@@ -145,7 +153,6 @@ Conflicts:	nano
 Conflicts:	sos
 Conflicts:	setuptool
 Conflicts:	gnome-disk-utility
-Conflicts:	system-config-language
 Conflicts:	lftp
 %description	conflicts-extra
 Conflicts with the packages that I yet have to find useful.
@@ -164,6 +171,7 @@ These were installed by various repogroups or anaconda.
 %files		conflicts-dnf
 %files		conflicts-docker
 %files		conflicts-gnome
+%files		conflicts-languages
 %files		conflicts-libreport
 %files		conflicts-openlmi
 %files		conflicts-packagekit
