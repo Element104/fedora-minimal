@@ -144,6 +144,7 @@ Conflicts:	jack-audio-connection-kit-example-clients
 Conflicts:	nano
 Conflicts:	sos
 Conflicts:	setuptool
+Conflicts:	gnome-disk-utility
 %description	conflicts-extra
 Conflicts with the packages that I yet have to find useful.
 These were installed by various repogroups or anaconda.
