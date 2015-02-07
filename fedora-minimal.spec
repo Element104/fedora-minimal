@@ -9,6 +9,7 @@ URL:		https://github.com/isimluk/fedora-minimal
 BuildArch:	noarch
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
+Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-setroubleshoot
@@ -53,6 +54,14 @@ Conflicts:	pykickstart
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
+%package	conflicts-cockpit
+Summary:	Keeps cockpit off
+Conflicts:	cockpit
+Conflicts:	storaged
+%description	conflicts-cockpit
+Conflicts with cockpit packages. Cockpit is another useful tool
+that I don't really need.
+
 %package	conflicts-gnome
 Summary:	Keeps some unneeded Gnome packages off
 # brought in by anaconda
@@ -60,6 +69,7 @@ Conflicts:	libgnomekbd
 Conflicts:	libxklavier
 Conflicts:	keybinder3
 Conflicts:	zenity
+Conflicts:	accountsservice-libs
 %description	conflicts-gnome
 Conflicts with Gnome packages that are not really needed.
 
@@ -119,6 +129,7 @@ These were installed by various repogroups or anaconda.
 %files
 %files		conflicts-abrt
 %files		conflicts-anaconda
+%files		conflicts-cockpit
 %files		conflicts-gnome
 %files		conflicts-libreport
 %files		conflicts-openlmi
