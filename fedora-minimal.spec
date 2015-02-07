@@ -154,6 +154,7 @@ Conflicts:	sos
 Conflicts:	setuptool
 Conflicts:	gnome-disk-utility
 Conflicts:	lftp
+Conflicts:	rmt
 %description	conflicts-extra
 Conflicts with the packages that I yet have to find useful.
 These were installed by various repogroups or anaconda.
