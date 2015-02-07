@@ -99,7 +99,7 @@ Conflicts with Gnome packages that are not really needed.
 %package	conflicts-languages
 Summary:	Keeps non english language support off
 Conflicts:	system-config-language
-Conflicts:	libkkc
+Conflicts:	libkkc, libkkc-common
 %description	conflicts-languages
 Conflicts wtih various packages related to internatialization.
 
