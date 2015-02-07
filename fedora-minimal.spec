@@ -69,6 +69,8 @@ Summary:	Keeps DNF off
 Conflicts:	dnf
 Conflicts:	hawkey
 Conflicts:	libsolv
+Conflicts:	python-libcomps, python3-libcomps
+Conflicts:	python-librepo, python3-librepo
 %description	conflicts-dnf
 Conflicts with DNF and rpm-ostree. Don't take me wrong, I think
 dnf is the future, I just happen to use yum at this point.
