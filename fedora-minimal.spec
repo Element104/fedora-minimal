@@ -13,6 +13,7 @@ Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-dnf
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
+Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
@@ -108,6 +109,12 @@ Conflicts:	pywbem
 %description	conflicts-openlmi
 Conflicts with OpenLMI set of packages
 
+%package	conflicts-packagekit
+Summary:	Keeps PackageKit off
+Conflicts:	PackageKit-glib
+%description	conflicts-packagekit
+Conflicts with PackageKit.
+
 %package	conflicts-setroubleshoot
 Summary:	Keeps setroubleshoot off
 Conflicts:	setroubleshoot-server
@@ -147,6 +154,7 @@ These were installed by various repogroups or anaconda.
 %files		conflicts-gnome
 %files		conflicts-libreport
 %files		conflicts-openlmi
+%files		conflicts-packagekit
 %files		conflicts-setroubleshoot
 %files		conflicts-vmguest
 %files		conflicts-misc
