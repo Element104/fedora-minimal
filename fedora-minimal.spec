@@ -11,6 +11,7 @@ Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-dnf
+Requires:	%{name}-conflicts-docker
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-packagekit
@@ -75,6 +76,13 @@ Conflicts:	python-librepo, python3-librepo
 %description	conflicts-dnf
 Conflicts with DNF and rpm-ostree. Don't take me wrong, I think
 dnf is the future, I just happen to use yum at this point.
+
+%package	conflicts-docker
+summary:	keeps docker off
+# this one pretty much does it
+conflicts:	docker-io
+%description	conflicts-docker
+Conflicts with Docker and libcontainer.
 
 %package	conflicts-gnome
 Summary:	Keeps some unneeded Gnome packages off
@@ -151,6 +159,7 @@ These were installed by various repogroups or anaconda.
 %files		conflicts-anaconda
 %files		conflicts-cockpit
 %files		conflicts-dnf
+%files		conflicts-docker
 %files		conflicts-gnome
 %files		conflicts-libreport
 %files		conflicts-openlmi
