@@ -146,6 +146,7 @@ Conflicts:	sos
 Conflicts:	setuptool
 Conflicts:	gnome-disk-utility
 Conflicts:	system-config-language
+Conflicts:	lftp
 %description	conflicts-extra
 Conflicts with the packages that I yet have to find useful.
 These were installed by various repogroups or anaconda.
