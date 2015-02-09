@@ -12,6 +12,7 @@ Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-dnf
 Requires:	%{name}-conflicts-docker
+Requires:	%{name}-conflicts-kdegames
 Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
@@ -96,12 +97,18 @@ Conflicts:	accountsservice-libs
 %description	conflicts-gnome
 Conflicts with Gnome packages that are not really needed.
 
+%package	conflicts-kdegames
+Summary:	Keeps kdegames off
+Conflicts:	openalt-soft
+%description	conflicts-kdegames
+Conflicts with kdegames and their dependencies.
+
 %package	conflicts-languages
 Summary:	Keeps non english language support off
 Conflicts:	system-config-language
 Conflicts:	libkkc, libkkc-common
 %description	conflicts-languages
-Conflicts wtih various packages related to internatialization.
+Conflicts with various packages related to internatialization.
 
 %package	conflicts-libreport
 Summary:	Keeps libreport off
@@ -172,6 +179,7 @@ These were installed by various repogroups or anaconda.
 %files		conflicts-dnf
 %files		conflicts-docker
 %files		conflicts-gnome
+%files		conflicts-kdegames
 %files		conflicts-languages
 %files		conflicts-libreport
 %files		conflicts-openlmi
