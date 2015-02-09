@@ -1,5 +1,5 @@
 Name:		fedora-minimal
-Version:	0.1
+Version:	0.2
 Release:	1%{?dist}
 Summary:	Keeping my work notebook clean
 
@@ -182,4 +182,6 @@ These were installed by various repogroups or anaconda.
 %files		conflicts-extra
 
 %changelog
+* Sat Feb 07 2015 slukasik - 0.2-1
+- new upstream release
 
