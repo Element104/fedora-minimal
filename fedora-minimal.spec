@@ -10,6 +10,7 @@ BuildArch:	noarch
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-cockpit
+Requires:	%{name}-conflicts-client-tools
 Requires:	%{name}-conflicts-dnf
 Requires:	%{name}-conflicts-docker
 Requires:	%{name}-conflicts-kdegames
@@ -58,6 +59,13 @@ Conflicts:	fcoe-utils
 Conflicts:	pykickstart
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
+
+%package	conflicts-client-tools
+Summary:	Keeps various client tools out
+Conflicts:	freeipa-python
+Conflicts:	freeipa-client
+%description	conflicts-client-tools
+Conflicts with various client packages.
 
 %package	conflicts-cockpit
 Summary:	Keeps cockpit off
@@ -178,6 +186,7 @@ These were installed by various repogroups or anaconda.
 %files
 %files		conflicts-abrt
 %files		conflicts-anaconda
+%files		conflicts-client-tools
 %files		conflicts-cockpit
 %files		conflicts-dnf
 %files		conflicts-docker
