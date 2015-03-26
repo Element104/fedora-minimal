@@ -7,6 +7,7 @@ Group:		System Environment/Base
 License:	GPLv2
 URL:		https://github.com/isimluk/fedora-minimal
 BuildArch:	noarch
+Requires:	%{name}-compat-systemd
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-cockpit
@@ -26,6 +27,11 @@ Requires:	%{name}-conflicts-misc
 The set of fedora-minimal* packages help me to keep my work
 notebook clean. The package provides *-compat-s and conflicts
 so I can enjoy my desktop without some unnecessary stuff
+
+%package	compat-systemd
+Summary:	systemd tweaks
+%description	compat-systemd
+Disables systemd-coredump.
 
 %package	conflicts-misc
 Summary:	Miscellaneous conflicts
@@ -182,8 +188,19 @@ These were installed by various repogroups or anaconda.
 %build
 
 %install
+# disable systemd-coredump, this cleans /proc/sys/kernel/core_pattern
+mkdir -p $RPM_BUILD_ROOT/etc/sysctl.d/
+echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
+
+%post compat-systemd
+/lib/systemd/systemd-sysctl
+
+%postun compat-systemd
+/lib/systemd/systemd-sysctl
 
 %files
+%files		compat-systemd
+/etc/sysctl.d/50-coredump.conf
 %files		conflicts-abrt
 %files		conflicts-anaconda
 %files		conflicts-client-tools
