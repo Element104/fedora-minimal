@@ -12,7 +12,6 @@ Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-client-tools
-Requires:	%{name}-conflicts-dnf
 Requires:	%{name}-conflicts-docker
 Requires:	%{name}-conflicts-kdegames
 Requires:	%{name}-conflicts-languages
@@ -22,6 +21,7 @@ Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
+Obsoletes:	%{name}-conflicts-dnf
 
 %description
 The set of fedora-minimal* packages help me to keep my work
@@ -80,18 +80,6 @@ Conflicts:	storaged
 %description	conflicts-cockpit
 Conflicts with cockpit packages. Cockpit is another useful tool
 that I don't really need.
-
-%package	conflicts-dnf
-Summary:	Keeps DNF off
-# this one pretty much does it
-Conflicts:	dnf
-Conflicts:	hawkey
-Conflicts:	libsolv
-Conflicts:	python-libcomps, python3-libcomps
-Conflicts:	python-librepo, python3-librepo
-%description	conflicts-dnf
-Conflicts with DNF and rpm-ostree. Don't take me wrong, I think
-dnf is the future, I just happen to use yum at this point.
 
 %package	conflicts-docker
 summary:	keeps docker off
@@ -205,7 +193,6 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-anaconda
 %files		conflicts-client-tools
 %files		conflicts-cockpit
-%files		conflicts-dnf
 %files		conflicts-docker
 %files		conflicts-gnome
 %files		conflicts-kdegames
