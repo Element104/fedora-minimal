@@ -22,6 +22,7 @@ Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
 Obsoletes:	%{name}-conflicts-dnf
+#TODO genisoimage
 
 %description
 The set of fedora-minimal* packages help me to keep my work
@@ -57,6 +58,7 @@ Conflicts:	libtimezonemap
 Conflicts:	python-blivet
 Conflicts:	python-cryptsetup
 Conflicts:	python-pyblock
+Conflicts:	python-pwquality
 Conflicts:	pyparted
 Conflicts:	device-mapper-multipath
 Conflicts:	libhbaapi
