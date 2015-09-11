@@ -170,6 +170,8 @@ Conflicts:	rmt
 Conflicts:	rcs
 Conflicts:	ssmtp
 Conflicts:	stunnel
+Conflicts:	systemd-python
+Conflicts:	systemd-python3
 %description	conflicts-extra
 Conflicts with the packages that I yet have to find useful.
 These were installed by various repogroups or anaconda.
