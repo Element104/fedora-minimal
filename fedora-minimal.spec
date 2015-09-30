@@ -10,8 +10,9 @@ BuildArch:	noarch
 Requires:	%{name}-compat-systemd
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-anaconda
-Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-client-tools
+Requires:	%{name}-conflicts-cluster
+Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-docker
 Requires:	%{name}-conflicts-kdegames
 Requires:	%{name}-conflicts-languages
@@ -75,6 +76,12 @@ Conflicts:	freeipa-python
 Conflicts:	freeipa-client
 %description	conflicts-client-tools
 Conflicts with various client packages.
+
+%package	conflicts-cluster
+Summary:	Keeps various cluster related tools out
+Conflicts:	device-mapper-multipath-libs
+%description	conflicts-cluster
+Conflicts with various cluster related tools.
 
 %package	conflicts-cockpit
 Summary:	Keeps cockpit off
@@ -197,6 +204,7 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-abrt
 %files		conflicts-anaconda
 %files		conflicts-client-tools
+%files		conflicts-cluster
 %files		conflicts-cockpit
 %files		conflicts-docker
 %files		conflicts-gnome
