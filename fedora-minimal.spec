@@ -9,6 +9,7 @@ URL:		https://github.com/isimluk/fedora-minimal
 BuildArch:	noarch
 Requires:	%{name}-compat-systemd
 Requires:	%{name}-conflicts-abrt
+Requires:	%{name}-conflicts-auth
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-client-tools
 Requires:	%{name}-conflicts-cluster
@@ -49,6 +50,14 @@ Conflicts:	abrt-libs
 Conflicts:	kexec-tools
 %description	conflicts-abrt
 Conflicts with ABRT set of packages.
+
+%package	conflicts-auth
+Summary:	Keeps extra packages related to authentization off
+Conflicts:	realmd
+Conflicts:	authconfig
+Conflicts:	python-sssdconfig
+%description	conflicts-auth
+Conflicts with extra packages related to user authentization.
 
 %package	conflicts-anaconda
 Summary:	Keeps the installer off
@@ -201,6 +210,7 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files
 %files		compat-systemd
 /etc/sysctl.d/50-coredump.conf
+%files		conflicts-auth
 %files		conflicts-abrt
 %files		conflicts-anaconda
 %files		conflicts-client-tools
