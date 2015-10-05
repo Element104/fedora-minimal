@@ -11,6 +11,7 @@ Requires:	%{name}-compat-systemd
 Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-auth
 Requires:	%{name}-conflicts-anaconda
+Requires:	%{name}-conflicts-btrfs
 Requires:	%{name}-conflicts-client-tools
 Requires:	%{name}-conflicts-cluster
 Requires:	%{name}-conflicts-cockpit
@@ -78,6 +79,12 @@ Conflicts:	pykickstart
 Conflicts:	anaconda-user-help
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
+
+%package	conflicts-btrfs
+Summary:	Keeps extra packages related to btrfs off
+Conflicts:	btrfs-progs
+%description	conflicts-btrfs
+Conflicts with extra packages related to btrfs.
 
 %package	conflicts-client-tools
 Summary:	Keeps various client tools out
@@ -213,6 +220,7 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-auth
 %files		conflicts-abrt
 %files		conflicts-anaconda
+%files		conflicts-btrfs
 %files		conflicts-client-tools
 %files		conflicts-cluster
 %files		conflicts-cockpit
