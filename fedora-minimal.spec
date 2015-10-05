@@ -16,6 +16,7 @@ Requires:	%{name}-conflicts-client-tools
 Requires:	%{name}-conflicts-cluster
 Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-docker
+Requires:	%{name}-conflicts-efi
 Requires:	%{name}-conflicts-kdegames
 Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
@@ -114,6 +115,12 @@ summary:	keeps docker off
 conflicts:	docker-io
 %description	conflicts-docker
 Conflicts with Docker and libcontainer.
+
+%package	conflicts-efi
+summary:	keeps efi tools off
+Conflicts:	efivar-libs
+%description	conflicts-efi
+Conflicts with efi tools.
 
 %package	conflicts-gnome
 Summary:	Keeps some unneeded Gnome packages off
@@ -233,6 +240,7 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-cluster
 %files		conflicts-cockpit
 %files		conflicts-docker
+%files		conflicts-efi
 %files		conflicts-gnome
 %files		conflicts-kdegames
 %files		conflicts-languages
