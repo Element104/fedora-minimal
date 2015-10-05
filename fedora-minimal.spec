@@ -1,5 +1,5 @@
 Name:		fedora-minimal
-Version:	0.3
+Version:	0.4
 Release:	1%{?dist}
 Summary:	Keeping my work notebook clean
 
@@ -253,6 +253,9 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-extra
 
 %changelog
+* Mon Oct 05 2015 Šimon Lukašík <slukasik@redhat.com> - 0.4-1
+- new upstream release
+
 * Fri Sep 11 2015 Šimon Lukašík <slukasik@redhat.com> - 0.3-1
 - new upstream release
 
