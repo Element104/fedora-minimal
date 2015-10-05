@@ -21,6 +21,7 @@ Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-packagekit
+Requires:	%{name}-conflicts-python2
 Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
@@ -166,6 +167,12 @@ Conflicts:	PackageKit-glib
 %description	conflicts-packagekit
 Conflicts with PackageKit.
 
+%package	conflicts-python2
+Summary:	Conflicts with some python2 libraries
+Conflicts:	python-coverage
+%description	conflicts-python2
+Conflicts with some python2 libraries that I no longer find useful.
+
 %package	conflicts-setroubleshoot
 Summary:	Keeps setroubleshoot off
 Conflicts:	setroubleshoot-server
@@ -231,6 +238,7 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-libreport
 %files		conflicts-openlmi
 %files		conflicts-packagekit
+%files		conflicts-python2
 %files		conflicts-setroubleshoot
 %files		conflicts-vmguest
 %files		conflicts-misc
