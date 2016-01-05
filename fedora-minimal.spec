@@ -20,6 +20,7 @@ Requires:	%{name}-conflicts-efi
 Requires:	%{name}-conflicts-kdegames
 Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
+Requires:	%{name}-conflicts-managed-client
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-python2
@@ -154,6 +155,14 @@ Conflicts:	satyr
 %description	conflicts-libreport
 Conflicts with libreport and its dependencies.
 
+%package	conflicts-managed-client
+Summary:	Keeps various client packages off
+Conflicts:	python-pbr
+Conflicts:	python-keystoneclient
+Conflicts:	python-novaclient
+%description	conflicts-managed-client
+Conflicts with client packages related to some management stacks.
+
 %package	conflicts-openlmi
 Summary:	Keeps OpenLMI off
 Conflicts:	cim-schema
@@ -244,6 +253,7 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-kdegames
 %files		conflicts-languages
 %files		conflicts-libreport
+%files		conflicts-managed-client
 %files		conflicts-openlmi
 %files		conflicts-packagekit
 %files		conflicts-python2
