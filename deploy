@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e -o pipefail
+set -x
+rm -rf ~/rpmbuild/RPMS/noarch/fedora-minimal-*
+rpmbuild -ba fedora-minimal.spec
+sudo dnf install ~/rpmbuild/RPMS/noarch/fedora-minimal*
+
