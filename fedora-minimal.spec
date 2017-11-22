@@ -222,6 +222,8 @@ Conflicts:	systemd-python
 Conflicts:	systemd-python3
 Conflicts:	tigervnc-license
 Conflicts:	samba-common-libs
+Conflicts:	rsyslog
+Conflicts:	libestr libfastjson liblogging-stdlog
 %description	conflicts-extra
 Conflicts with the packages that I yet have to find useful.
 These were installed by various repogroups or anaconda.
