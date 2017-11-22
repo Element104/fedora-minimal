@@ -1,5 +1,5 @@
 Name:		fedora-minimal
-Version:	0.4
+Version:	0.5
 Release:	1%{?dist}
 Summary:	Keeping my work notebook clean
 
@@ -44,6 +44,7 @@ Disables systemd-coredump.
 Summary:	Miscellaneous conflicts
 # rhbz#1187867
 Conflicts:	NetworkManager-config-connectivity-fedora
+Requires:	NetworkManager-team
 %description	conflicts-misc
 Conflicts with miscellaneous packages.
 
@@ -124,10 +125,12 @@ Conflicts with efi tools.
 
 %package	conflicts-gnome
 Summary:	Keeps some unneeded Gnome packages off
+Conflicts:	anaconda-user-help
 # brought in by anaconda
 Conflicts:	libgnomekbd
-Conflicts:	libxklavier
-Conflicts:	keybinder3
+Conflicts:	glade-libs
+#Conflicts:	libxklavier - neede by my favourite lightdm
+#Conflicts:	keybinder3 - needed by terminator
 Conflicts:	zenity
 Conflicts:	accountsservice-libs
 %description	conflicts-gnome
@@ -264,6 +267,9 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-extra
 
 %changelog
+* Wed Nov 22 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-1
+- amended for my today needs on F27
+
 * Mon Oct 05 2015 Šimon Lukašík <slukasik@redhat.com> - 0.4-1
 - new upstream release
 
