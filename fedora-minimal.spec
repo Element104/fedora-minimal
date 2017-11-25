@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -27,6 +27,7 @@ Requires:	%{name}-conflicts-python2
 Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
+Requires:	%{name}-disable-services
 Obsoletes:	%{name}-conflicts-dnf
 #TODO genisoimage
 
@@ -44,7 +45,7 @@ Disables systemd-coredump.
 Summary:	Miscellaneous conflicts
 # rhbz#1187867
 Conflicts:	NetworkManager-config-connectivity-fedora
-Requires:	NetworkManager-team
+Conflicts:	NetworkManager-team
 %description	conflicts-misc
 Conflicts with miscellaneous packages.
 
@@ -228,6 +229,11 @@ Conflicts:	libestr libfastjson liblogging-stdlog
 Conflicts with the packages that I yet have to find useful.
 These were installed by various repogroups or anaconda.
 
+%package	disable-services
+Summary:	Please
+%description	disable-services
+Disables various services that are really not needed on minimal laptop.
+
 %prep
 
 %build
@@ -242,6 +248,10 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 
 %postun compat-systemd
 /lib/systemd/systemd-sysctl
+
+%post disable-services
+chkconfig sshd off  # screw you systemd, I learned chkconfig when I was young
+systemctl disable dnf-makecache.timer  # ok systemd you win
 
 %files
 %files		compat-systemd
@@ -267,8 +277,12 @@ echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
 %files		conflicts-vmguest
 %files		conflicts-misc
 %files		conflicts-extra
+%files		disable-services
 
 %changelog
+* Sat Nov 25 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-2
+- rebuilt
+
 * Wed Nov 22 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-1
 - amended for my today needs on F27
 
