@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -239,15 +239,23 @@ Disables various services that are really not needed on minimal laptop.
 %build
 
 %install
-# disable systemd-coredump, this cleans /proc/sys/kernel/core_pattern
+# disable systemd-coredump in var, this cleans /proc/sys/kernel/core_pattern
 mkdir -p $RPM_BUILD_ROOT/etc/sysctl.d/
 echo "kernel.core_pattern=" > $RPM_BUILD_ROOT/etc/sysctl.d/50-coredump.conf
+# disable systemd-coredump whatsoever
+mkdir -p $RPM_BUILD_ROOT/etc/systemd/coredump.conf.d/
+cat > $RPM_BUILD_ROOT/etc/systemd/coredump.conf.d/disable.conf <<__END__
+[Coredump]
+Storage=none
+__END__
 
 %post compat-systemd
 /lib/systemd/systemd-sysctl
+systemctl daemon-reload
 
 %postun compat-systemd
 /lib/systemd/systemd-sysctl
+systemctl daemon-reload
 
 %post disable-services
 chkconfig sshd off  # screw you systemd, I learned chkconfig when I was young
@@ -256,6 +264,7 @@ systemctl disable dnf-makecache.timer  # ok systemd you win
 %files
 %files		compat-systemd
 /etc/sysctl.d/50-coredump.conf
+/etc/systemd/coredump.conf.d/disable.conf
 %files		conflicts-auth
 %files		conflicts-abrt
 %files		conflicts-anaconda
@@ -280,6 +289,9 @@ systemctl disable dnf-makecache.timer  # ok systemd you win
 %files		disable-services
 
 %changelog
+* Thu Nov 30 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-3
+- rebuilt -- fix coredumpctl (disable)
+
 * Sat Nov 25 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-2
 - rebuilt
 
