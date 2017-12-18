@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -28,6 +28,7 @@ Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
 Requires:	%{name}-disable-services
+Requires:	%{name}-confilicts-old-hw-support
 Obsoletes:	%{name}-conflicts-dnf
 #TODO genisoimage
 
@@ -207,6 +208,18 @@ Conflicts:	xorg-x11-drv-vmware
 %description	conflicts-vmguest
 Conflicts with packages related to VM guests.
 
+%package	conflicts-old-hw-support
+Summary:	Conflicts with support of dated hardware
+Conflicts:	iwl100-firmware iwl105-firmware iwl135-firmware
+Conflicts:	iwl1000-firmware
+Conflicts:	iwl2000-firmware iwl2030-firmware
+Conflicts:	iwl3160-firmware iwl3945-firmware
+Conflicts:	iwl4965-firmware
+Conflicts:	iwl5000-firmware iwl5150-firmware
+Conflicts:	iwl6000-firmware iwl6000g2a-firmware iwl6000g2b-firmware iwl6050-firmware
+%description	conflicts-old-hw-support
+Conflicts with various dated firmware packages.
+
 %package	conflicts-extra
 Summary:	Extra conflicts that you may found useful
 Conflicts:	jack-audio-connection-kit-example-clients
@@ -286,9 +299,13 @@ systemctl disable dnf-makecache.timer  # ok systemd you win
 %files		conflicts-vmguest
 %files		conflicts-misc
 %files		conflicts-extra
+%files		conflicts-old-hw-support
 %files		disable-services
 
 %changelog
+* Mon Dec 18 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-4
+- rebuilt
+
 * Thu Nov 30 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-3
 - rebuilt -- fix coredumpctl (disable)
 
