@@ -273,6 +273,7 @@ systemctl daemon-reload
 %post disable-services
 chkconfig sshd off  # screw you systemd, I learned chkconfig when I was young
 systemctl disable dnf-makecache.timer  # ok systemd you win
+systemctl disable sssd.service
 
 %files
 %files		compat-systemd
