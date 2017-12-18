@@ -28,7 +28,7 @@ Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-misc
 Requires:	%{name}-disable-services
-Requires:	%{name}-confilicts-old-hw-support
+Requires:	%{name}-conflicts-old-hw-support
 Obsoletes:	%{name}-conflicts-dnf
 #TODO genisoimage
 
