@@ -26,6 +26,7 @@ Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-python2
 Requires:	%{name}-conflicts-setroubleshoot
+Requires:	%{name}-conflicts-sssd
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-network-services
 Requires:	%{name}-conflicts-misc
@@ -217,6 +218,22 @@ Conflicts:	setroubleshoot-server
 %description	conflicts-setroubleshoot
 Conflicts with setroubleshoot packages.
 
+%package	conflicts-sssd
+Summary:	Keeps sssd off
+Conflicts:	sssd
+Conflicts:	sssd-ipa sssd-krb5 sssd-krb5-common sssd-ldap
+Conflicts:	adcli
+Conflicts:	cyrus-sasl-gssapi
+Conflicts:	lubipa_hbac
+Conflicts:	libsmbclient
+Conflicts:	python3-sssdconfig
+Conflicts:	sssd-common-pac
+Conflicts:	sssd-proxy
+Conflicts:	sssd-nfs-idmap
+Conflicts:	libnfsidmap
+%description	conflicts-setroubleshoot
+Conflicts with setroubleshoot packages.
+
 %package	conflicts-vmguest
 Summary:	Keeps vm guest tools off
 Conflicts:	spice-vdagent
@@ -300,7 +317,6 @@ systemctl daemon-reload
 %post disable-services
 chkconfig sshd off  # screw you systemd, I learned chkconfig when I was young
 systemctl disable dnf-makecache.timer  # ok systemd you win
-systemctl disable sssd.service
 
 %files
 %files		compat-systemd
@@ -325,6 +341,7 @@ systemctl disable sssd.service
 %files		conflicts-packagekit
 %files		conflicts-python2
 %files		conflicts-setroubleshoot
+%files		conflicts-sssd
 %files		conflicts-vmguest
 %files		conflicts-network-services
 %files		conflicts-misc
