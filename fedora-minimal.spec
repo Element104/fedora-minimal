@@ -13,6 +13,7 @@ Requires:	%{name}-conflicts-auth
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-btrfs
 Requires:	%{name}-conflicts-client-tools
+Requires:	%{name}-conflicts-cloud-iaas
 Requires:	%{name}-conflicts-cluster
 Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-docker
@@ -114,6 +115,13 @@ Conflicts:	device-mapper-multipath-libs
 %description	conflicts-cluster
 Conflicts with various cluster related tools.
 
+%package	conflicts-cloud-iass
+Summary:	Keeps various cloud related tools out
+Conflicts:	userspace-rcu librados2 lttng-ust
+%description	conflicts-cloud-iass
+Conflicts with various clould related tools.
+
+Requires:	%{name}-conflicts-cloud-iaas
 %package	conflicts-cockpit
 Summary:	Keeps cockpit off
 Conflicts:	cockpit
@@ -303,6 +311,7 @@ systemctl disable sssd.service
 %files		conflicts-anaconda
 %files		conflicts-btrfs
 %files		conflicts-client-tools
+%files		conflicts-cloud-iaas
 %files		conflicts-cluster
 %files		conflicts-cockpit
 %files		conflicts-docker
