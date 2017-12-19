@@ -231,6 +231,7 @@ Conflicts:	sssd-common-pac
 Conflicts:	sssd-proxy
 Conflicts:	sssd-nfs-idmap
 Conflicts:	libnfsidmap
+Conflicts:	libsss_sudo libsss_autofs
 %description	conflicts-setroubleshoot
 Conflicts with setroubleshoot packages.
 
@@ -249,6 +250,9 @@ Conflicts:	gssproxy
 Conflicts:	nfs-utils rpcbind
 Conflicts:	libtirpc
 Conflicts:	libevent libverto-libev
+Conflicts:	samba-libs samba-client-libs samba-common
+Conflicts:	cifs-utils libwbclient
+Conflicts:	keyutils
 %description	conflicts-network-services
 Conflicts with packages related to network services.
 
