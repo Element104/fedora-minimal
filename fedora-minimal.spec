@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -83,6 +83,15 @@ Conflicts:	libhbaapi
 Conflicts:	lldpad
 Conflicts:	fcoe-utils
 Conflicts:	anaconda-user-help
+Conflicts:	libblockdev
+Conflicts:	libblockdev-kbd bcache-tools
+Conflicts:	libblockdev-swap
+Conflicts:	libblockdev-mdraid
+Conflicts:	libblockdev-dm dmraid dmraid-events sgpio
+Conflicts:	libblockdev-lvm
+Conflicts:	libblockdev-loop
+Conflicts:	libblockdev-crypto volume_key-libs
+Conflicts:	libblockdev-utils
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
@@ -315,6 +324,9 @@ systemctl disable sssd.service
 %files		disable-services
 
 %changelog
+* Tue Dec 19 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-5
+- rebuilt
+
 * Mon Dec 18 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-4
 - rebuilt
 
