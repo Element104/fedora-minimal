@@ -26,6 +26,7 @@ Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-python2
 Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-vmguest
+Requires:	%{name}-conflicts-network-services
 Requires:	%{name}-conflicts-misc
 Requires:	%{name}-disable-services
 Requires:	%{name}-conflicts-old-hw-support
@@ -208,6 +209,15 @@ Conflicts:	xorg-x11-drv-vmware
 %description	conflicts-vmguest
 Conflicts with packages related to VM guests.
 
+%package	conflicts-network-services
+Summary:	Keeps network services off my notebook
+Conflicts:	gssproxy
+Conflicts:	nfs-utils rpcbind
+Conflicts:	libtirpc
+Conflicts:	libevent libverto-libev
+%description	conflicts-network-services
+Conflicts with packages related to network services.
+
 %package	conflicts-old-hw-support
 Summary:	Conflicts with support of dated hardware
 Conflicts:	iwl100-firmware iwl105-firmware iwl135-firmware
@@ -298,6 +308,7 @@ systemctl disable sssd.service
 %files		conflicts-python2
 %files		conflicts-setroubleshoot
 %files		conflicts-vmguest
+%files		conflicts-network-services
 %files		conflicts-misc
 %files		conflicts-extra
 %files		conflicts-old-hw-support
