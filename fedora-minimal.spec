@@ -82,6 +82,7 @@ Conflicts:	python-pyblock
 Conflicts:	python-pwquality
 Conflicts:	pyparted
 Conflicts:	device-mapper-multipath
+Conflicts:	kpartx
 Conflicts:	libhbaapi
 Conflicts:	lldpad
 Conflicts:	fcoe-utils
