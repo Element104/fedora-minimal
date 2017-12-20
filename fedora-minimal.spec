@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	5%{?dist}
+Release:	6%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -26,6 +26,7 @@ Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-python2
 Requires:	%{name}-conflicts-setroubleshoot
+Requires:	%{name}-conflicts-selinux-advanced-tools
 Requires:	%{name}-conflicts-sssd
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-network-services
@@ -217,6 +218,17 @@ Conflicts:	setroubleshoot-server
 %description	conflicts-setroubleshoot
 Conflicts with setroubleshoot packages.
 
+%package	conflicts-selinux-advanced-tools
+Summary:	Keeps advanced selinux tools offf
+Conflicts:	checkpolicy
+Conflicts:	policycoreutils-python-utils
+Conflicts:	policycoreutils-python3
+Conflicts:	libsemanage-python3
+Conflicts:	setools-python3
+%description	conflicts-selinux-advanced-tools
+Note: This may damper your ability to install various -selinux
+subpackages. See dnf search selinux | grep -- -selinux
+
 %package	conflicts-sssd
 Summary:	Keeps sssd off
 Conflicts:	sssd
@@ -343,6 +355,7 @@ systemctl disable dnf-makecache.timer  # ok systemd you win
 %files		conflicts-openlmi
 %files		conflicts-packagekit
 %files		conflicts-python2
+%files		conflicts-selinux-advanced-tools
 %files		conflicts-setroubleshoot
 %files		conflicts-sssd
 %files		conflicts-vmguest
@@ -353,6 +366,9 @@ systemctl disable dnf-makecache.timer  # ok systemd you win
 %files		disable-services
 
 %changelog
+* Wed Dec 20 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-7
+- rebuilt
+
 * Tue Dec 19 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-5
 - rebuilt
 
