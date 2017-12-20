@@ -232,7 +232,7 @@ Conflicts:	sssd-proxy
 Conflicts:	sssd-nfs-idmap
 Conflicts:	libnfsidmap
 Conflicts:	libsss_sudo libsss_autofs
-%description	conflicts-setroubleshoot
+%description	conflicts-sssd
 Conflicts with setroubleshoot packages.
 
 %package	conflicts-vmguest
