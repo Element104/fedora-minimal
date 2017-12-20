@@ -116,13 +116,12 @@ Conflicts:	device-mapper-multipath-libs
 %description	conflicts-cluster
 Conflicts with various cluster related tools.
 
-%package	conflicts-cloud-iass
+%package	conflicts-cloud-iaas
 Summary:	Keeps various cloud related tools out
 Conflicts:	userspace-rcu librados2 lttng-ust
-%description	conflicts-cloud-iass
+%description	conflicts-cloud-iaas
 Conflicts with various clould related tools.
 
-Requires:	%{name}-conflicts-cloud-iaas
 %package	conflicts-cockpit
 Summary:	Keeps cockpit off
 Conflicts:	cockpit
