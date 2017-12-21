@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	6%{?dist}
+Release:	7%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -12,6 +12,7 @@ Requires:	%{name}-conflicts-abrt
 Requires:	%{name}-conflicts-auth
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-btrfs
+Requires:	%{name}-conflicts-bluetooth
 Requires:	%{name}-conflicts-client-tools
 Requires:	%{name}-conflicts-cloud-iaas
 Requires:	%{name}-conflicts-cluster
@@ -98,6 +99,12 @@ Conflicts:	libblockdev-crypto volume_key-libs
 Conflicts:	libblockdev-utils
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
+
+%package	conflicts-bluetooth
+Summary:	Keeps bluetooth broken
+Conflicts:	bluez-libs
+%description	conflicts-bluetooth
+Conflicts with bluebooth.
 
 %package	conflicts-btrfs
 Summary:	Keeps extra packages related to btrfs off
@@ -322,6 +329,16 @@ cat > $RPM_BUILD_ROOT/etc/systemd/coredump.conf.d/disable.conf <<__END__
 [Coredump]
 Storage=none
 __END__
+# disable bluetooth (A)
+mkdir -p ${RPM_BUILD_ROOT}/etc/bluetooth
+cat > ${RPM_BUILD_ROOT}/etc/bluetooth/main.conf <<__END__
+AutoEnable=false
+__END__
+# disable bluetooth (B)
+mkdir -p ${RPM_BUILD_ROOT}/etc/modprobe.d/
+cat > ${RPM_BUILD_ROOT}/etc/modprobe.d/blacklist-btusb.conf <<__END__
+blacklist btusb
+__END__
 
 %post compat-systemd
 /lib/systemd/systemd-sysctl
@@ -335,6 +352,10 @@ systemctl daemon-reload
 chkconfig sshd off  # screw you systemd, I learned chkconfig when I was young
 systemctl disable dnf-makecache.timer  # ok systemd you win
 
+%post conflicts-bluetooth
+# disable bluetooth (B)
+modprobe -r btusb
+
 %files
 %files		compat-systemd
 /etc/sysctl.d/50-coredump.conf
@@ -342,6 +363,9 @@ systemctl disable dnf-makecache.timer  # ok systemd you win
 %files		conflicts-auth
 %files		conflicts-abrt
 %files		conflicts-anaconda
+%files		conflicts-bluetooth
+/etc/modprobe.d/blacklist-btusb.conf
+/etc/bluetooth/main.conf
 %files		conflicts-btrfs
 %files		conflicts-client-tools
 %files		conflicts-cloud-iaas
@@ -368,6 +392,9 @@ systemctl disable dnf-makecache.timer  # ok systemd you win
 %files		disable-services
 
 %changelog
+* Thu Dec 21 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-7
+- rebuilt
+
 * Wed Dec 20 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-7
 - rebuilt
 
