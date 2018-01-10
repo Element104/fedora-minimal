@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	7%{?dist}
+Release:	8%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -97,6 +97,7 @@ Conflicts:	libblockdev-lvm
 Conflicts:	libblockdev-loop
 Conflicts:	libblockdev-crypto volume_key-libs
 Conflicts:	libblockdev-utils
+Conflicts:	ntfs-3g
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
@@ -392,6 +393,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Wed Jan 10 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-8
+- rebuilt
+
 * Thu Dec 21 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-7
 - rebuilt
 
