@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	8%{?dist}
+Release:	9%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -24,6 +24,7 @@ Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-managed-client
 Requires:	%{name}-conflicts-openlmi
+Requires:	%{name}-conflicts-opencl
 Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-python2
 Requires:	%{name}-conflicts-setroubleshoot
@@ -209,6 +210,16 @@ Conflicts:	pywbem
 %description	conflicts-openlmi
 Conflicts with OpenLMI set of packages
 
+%package	conflicts-opencl
+Summary:	Keeps OpenCL tools off
+Conflicts:	beignet
+Conflicts:	pocl
+Conflicts:	mesa-libOpenCL
+Conflicts:	libclc
+Conflicts:	opencl-filesystem
+%description	conflicts-opencl
+Conflicts with OpenCL set of packages
+
 %package	conflicts-packagekit
 Summary:	Keeps PackageKit off
 Conflicts:	PackageKit-glib
@@ -380,6 +391,7 @@ modprobe -r btusb
 %files		conflicts-libreport
 %files		conflicts-managed-client
 %files		conflicts-openlmi
+%files		conflicts-opencl
 %files		conflicts-packagekit
 %files		conflicts-python2
 %files		conflicts-selinux-advanced-tools
@@ -393,6 +405,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Tue Jan 16 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-9
+- introduce -conflicts-opencl
+
 * Wed Jan 10 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-8
 - rebuilt
 
