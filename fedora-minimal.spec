@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	9%{?dist}
+Release:	10%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -98,7 +98,7 @@ Conflicts:	libblockdev-lvm
 Conflicts:	libblockdev-loop
 Conflicts:	libblockdev-crypto volume_key-libs
 Conflicts:	libblockdev-utils
-Conflicts:	ntfs-3g
+Conflicts:	timedatex
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
@@ -405,6 +405,10 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Thu Jan 25 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-10
+- remove timedatex used only by anaconda
+- grace with ntfs, kids have external disks with ntfs nowdays
+
 * Tue Jan 16 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-9
 - introduce -conflicts-opencl
 
