@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.5
-Release:	10%{?dist}
+Release:	11%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -32,6 +32,7 @@ Requires:	%{name}-conflicts-selinux-advanced-tools
 Requires:	%{name}-conflicts-sssd
 Requires:	%{name}-conflicts-vmguest
 Requires:	%{name}-conflicts-network-services
+Requires:	%{name}-conflicts-network-tools
 Requires:	%{name}-conflicts-misc
 Requires:	%{name}-disable-services
 Requires:	%{name}-conflicts-old-hw-support
@@ -81,7 +82,8 @@ Conflicts:	libtimezonemap
 Conflicts:	python-blivet
 Conflicts:	python-cryptsetup
 Conflicts:	python-pyblock
-Conflicts:	python-pwquality
+Conflicts:	python3-pwquality
+Conflicts:	augeas-libs
 Conflicts:	pyparted
 Conflicts:	device-mapper-multipath
 Conflicts:	kpartx
@@ -258,11 +260,23 @@ Conflicts:	cyrus-sasl-gssapi
 Conflicts:	lubipa_hbac
 Conflicts:	libsmbclient
 Conflicts:	python3-sssdconfig
+Conflicts:	sssd-client
+Conflicts:	sssd-common
 Conflicts:	sssd-common-pac
+Conflicts:	sssd-kcm
 Conflicts:	sssd-proxy
 Conflicts:	sssd-nfs-idmap
 Conflicts:	libnfsidmap
+Conflicts:	libsss_certmap
+Conflicts:	libsss_idmap
+Conflicts:	libsss_nss_idmap
 Conflicts:	libsss_sudo libsss_autofs
+Conflicts:	c-ares
+Conflicts:	libldb
+Conflicts:	libdhash
+Conflicts:	libtalloc
+Conflicts:	libtevent
+Conflicts:	http-parser
 %description	conflicts-sssd
 Conflicts with setroubleshoot packages.
 
@@ -285,6 +299,12 @@ Conflicts:	samba-libs samba-client-libs samba-common
 Conflicts:	cifs-utils libwbclient
 Conflicts:	keyutils
 %description	conflicts-network-services
+Conflicts with packages related to network services.
+
+%package	conflicts-network-tools
+Summary:	Keeps network tools off my notebook
+Conflicts:	bridge-utils
+%description	conflicts-network-tools
 Conflicts with packages related to network services.
 
 %package	conflicts-old-hw-support
@@ -399,12 +419,16 @@ modprobe -r btusb
 %files		conflicts-sssd
 %files		conflicts-vmguest
 %files		conflicts-network-services
+%files		conflicts-network-tools
 %files		conflicts-misc
 %files		conflicts-extra
 %files		conflicts-old-hw-support
 %files		disable-services
 
 %changelog
+* Mon Mar 05 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-11
+- rebuilt
+
 * Thu Jan 25 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-10
 - remove timedatex used only by anaconda
 - grace with ntfs, kids have external disks with ntfs nowdays
