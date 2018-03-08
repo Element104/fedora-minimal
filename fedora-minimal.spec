@@ -13,6 +13,7 @@ Requires:	%{name}-conflicts-auth
 Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-btrfs
 Requires:	%{name}-conflicts-bluetooth
+Requires:	%{name}-conflicts-cards
 Requires:	%{name}-conflicts-client-tools
 Requires:	%{name}-conflicts-cloud-iaas
 Requires:	%{name}-conflicts-cluster
@@ -115,6 +116,12 @@ Summary:	Keeps extra packages related to btrfs off
 Conflicts:	btrfs-progs
 %description	conflicts-btrfs
 Conflicts with extra packages related to btrfs.
+
+%package	conflicts-cards
+Summary:	Keeps various smart card and tokens support out
+Conflicts:	pcsc-lite-libs
+%description	conflicts-cards
+Conflicts with various smart card and token support packages.
 
 %package	conflicts-client-tools
 Summary:	Keeps various client tools out
@@ -399,6 +406,7 @@ modprobe -r btusb
 /etc/modprobe.d/blacklist-btusb.conf
 /etc/bluetooth/main.conf
 %files		conflicts-btrfs
+%files		conflicts-cards
 %files		conflicts-client-tools
 %files		conflicts-cloud-iaas
 %files		conflicts-cluster
