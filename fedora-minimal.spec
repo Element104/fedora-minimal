@@ -301,7 +301,6 @@ Conflicts with packages related to VM guests.
 Summary:	Keeps network services off my notebook
 Conflicts:	gssproxy
 Conflicts:	nfs-utils rpcbind
-Conflicts:	libtirpc
 Conflicts:	libevent libverto-libev
 Conflicts:	samba-libs samba-client-libs samba-common
 Conflicts:	cifs-utils libwbclient
