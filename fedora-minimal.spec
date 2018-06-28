@@ -108,6 +108,7 @@ Conflicts with Anaconda installer and its dependencies.
 %package	conflicts-bluetooth
 Summary:	Keeps bluetooth broken
 Conflicts:	bluez-libs
+Conflicts:	bluez
 %description	conflicts-bluetooth
 Conflicts with bluebooth.
 
