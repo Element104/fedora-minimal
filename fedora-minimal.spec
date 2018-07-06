@@ -311,6 +311,7 @@ Conflicts with packages related to network services.
 %package	conflicts-network-tools
 Summary:	Keeps network tools off my notebook
 Conflicts:	bridge-utils
+Conflicts:	dnsmasq
 %description	conflicts-network-tools
 Conflicts with packages related to network services.
 
