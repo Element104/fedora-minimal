@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.6
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -295,6 +295,7 @@ Conflicts:	spice-vdagent
 Conflicts:	qemu-guest-agent
 Conflicts:	open-vm-tools
 Conflicts:	xorg-x11-drv-vmware
+Conflicts:	virtualbox-guest-additions
 %description	conflicts-vmguest
 Conflicts with packages related to VM guests.
 
@@ -436,6 +437,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Fri Jul 13 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-2
+- rebuilt
+
 * Mon Jul 02 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-1
 - support f28
 
