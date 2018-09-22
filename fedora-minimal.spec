@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.6
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -20,6 +20,7 @@ Requires:	%{name}-conflicts-cluster
 Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-docker
 Requires:	%{name}-conflicts-efi
+Requires:	%{name}-conflicts-fingerprint
 Requires:	%{name}-conflicts-kdegames
 Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
@@ -70,6 +71,8 @@ Conflicts with ABRT set of packages.
 Summary:	Keeps extra packages related to authentization off
 Conflicts:	realmd
 Conflicts:	authconfig
+Conflicts:	authselect
+Conflicts:	authselect-libs
 Conflicts:	python-sssdconfig
 %description	conflicts-auth
 Conflicts with extra packages related to user authentization.
@@ -164,6 +167,14 @@ summary:	keeps efi tools off
 Conflicts:	efivar-libs
 %description	conflicts-efi
 Conflicts with efi tools.
+
+%package	conflicts-fingerprint
+Summary:	keeps finger print reader tools out
+Conflicts:	fprintd-pam
+Conflicts:	fprintd
+Conflicts:	libfprint
+%description	conflicts-fingerprint
+Conflicts with finger print reader tools.
 
 %package	conflicts-gnome
 Summary:	Keeps some unneeded Gnome packages off
@@ -416,6 +427,7 @@ modprobe -r btusb
 %files		conflicts-cockpit
 %files		conflicts-docker
 %files		conflicts-efi
+%files		conflicts-fingerprint
 %files		conflicts-gnome
 %files		conflicts-kdegames
 %files		conflicts-languages
@@ -437,8 +449,11 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Sat Sep 22 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-3
+- get a rid of authselect
+
 * Fri Jul 13 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-2
-- rebuilt
+- get a rid of virtualbox-guest-additions
 
 * Mon Jul 02 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-1
 - support f28
