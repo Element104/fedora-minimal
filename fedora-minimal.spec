@@ -1,6 +1,6 @@
 Name:		fedora-minimal
-Version:	0.6
-Release:	3%{?dist}
+Version:	0.29
+Release:	1%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -104,6 +104,7 @@ Conflicts:	libblockdev-lvm
 Conflicts:	libblockdev-loop
 Conflicts:	libblockdev-crypto volume_key-libs
 Conflicts:	libblockdev-utils
+Conflicts:	libudisks2
 Conflicts:	libbytesize
 Conflicts:	timedatex
 %description	conflicts-anaconda
@@ -449,6 +450,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Sun Dec 30 2018 Šimon Lukašík <slukasik@redhat.com> - 0.29-1
+- rebuilt for f29
+
 * Sat Sep 22 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-3
 - get a rid of authselect
 
