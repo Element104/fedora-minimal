@@ -83,7 +83,7 @@ Conflicts:	anaconda-core anaconda-widgets
 # brought in by anaconda
 Conflicts:	tigervnc-server-minimal
 Conflicts:	libtimezonemap
-Conflicts:	python-blivet
+Conflicts:	python3-blivet
 Conflicts:	python-cryptsetup
 Conflicts:	python-pyblock
 Conflicts:	python3-pwquality
