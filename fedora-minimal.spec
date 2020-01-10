@@ -279,7 +279,6 @@ Conflicts:	sssd-ipa sssd-krb5 sssd-krb5-common sssd-ldap
 Conflicts:	adcli
 Conflicts:	cyrus-sasl-gssapi
 Conflicts:	lubipa_hbac
-Conflicts:	libsmbclient
 Conflicts:	python3-sssdconfig
 Conflicts:	sssd-client
 Conflicts:	sssd-common
@@ -293,10 +292,7 @@ Conflicts:	libsss_idmap
 Conflicts:	libsss_nss_idmap
 Conflicts:	libsss_sudo libsss_autofs
 Conflicts:	c-ares
-Conflicts:	libldb
 Conflicts:	libdhash
-Conflicts:	libtalloc
-Conflicts:	libtevent
 Conflicts:	http-parser
 %description	conflicts-sssd
 Conflicts with setroubleshoot packages.
