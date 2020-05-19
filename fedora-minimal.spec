@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.32
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -14,6 +14,7 @@ Requires:	%{name}-conflicts-anaconda
 Requires:	%{name}-conflicts-btrfs
 Requires:	%{name}-conflicts-bluetooth
 Requires:	%{name}-conflicts-cards
+Requires:	%{name}-conflicts-clever-desktop
 Requires:	%{name}-conflicts-client-tools
 Requires:	%{name}-conflicts-cloud-iaas
 Requires:	%{name}-conflicts-cluster
@@ -127,6 +128,19 @@ Summary:	Keeps various smart card and tokens support out
 Conflicts:	pcsc-lite-libs
 %description	conflicts-cards
 Conflicts with various smart card and token support packages.
+
+%package	conflicts-clever-desktop
+Summary:	Keeps various desktop trackers, file system indexers, metadata search
+Conflicts:	exempi
+Conflicts:	libcue
+Conflicts:	libgexiv2
+Conflicts:	libgrss
+Conflicts:	libiptcdata
+Conflicts:	libosinfo
+Conflicts:	libtracker-miner
+Conflicts:	osinfo-db-tools
+%description	conflicts-clever-desktop
+Conflicts with various desktop trackers, file system indexers, metadata search...
 
 %package	conflicts-client-tools
 Summary:	Keeps various client tools out
@@ -417,6 +431,7 @@ modprobe -r btusb
 /etc/bluetooth/main.conf
 %files		conflicts-btrfs
 %files		conflicts-cards
+%files		conflicts-clever-desktop
 %files		conflicts-client-tools
 %files		conflicts-cloud-iaas
 %files		conflicts-cluster
@@ -445,6 +460,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Tue May 19 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-2
+- rebuilt
+
 * Mon May 11 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-1
 - rebuilt for f32
 
