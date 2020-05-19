@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.32
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -265,6 +265,8 @@ Conflicts with PackageKit.
 %package	conflicts-python2
 Summary:	Conflicts with some python2 libraries
 Conflicts:	python-coverage
+Conflicts:	python27
+Conflicts:	python2-rpm-macros
 %description	conflicts-python2
 Conflicts with some python2 libraries that I no longer find useful.
 
@@ -460,6 +462,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Tue May 19 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-3
+- rebuilt
+
 * Tue May 19 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-2
 - rebuilt
 
