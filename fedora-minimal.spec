@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.32
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -319,6 +319,8 @@ Conflicts:	qemu-guest-agent
 Conflicts:	open-vm-tools
 Conflicts:	xorg-x11-drv-vmware
 Conflicts:	virtualbox-guest-additions
+Conflicts:	hyperv-daemons
+Conflicts:	hyperv-daemons-license
 %description	conflicts-vmguest
 Conflicts with packages related to VM guests.
 
@@ -462,6 +464,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Fri May 22 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-4
+- rebuilt
+
 * Tue May 19 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-3
 - rebuilt
 
