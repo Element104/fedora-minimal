@@ -139,6 +139,7 @@ Conflicts:	libiptcdata
 Conflicts:	libosinfo
 Conflicts:	libtracker-miner
 Conflicts:	osinfo-db-tools
+Conflicts:	imwheel
 %description	conflicts-clever-desktop
 Conflicts with various desktop trackers, file system indexers, metadata search...
 
