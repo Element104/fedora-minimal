@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.32
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -97,6 +97,7 @@ Conflicts:	libhbaapi
 Conflicts:	lldpad
 Conflicts:	fcoe-utils
 Conflicts:	anaconda-user-help
+Conflicts:	anaconda-widgets
 Conflicts:	libblockdev
 Conflicts:	libblockdev-kbd bcache-tools
 Conflicts:	libblockdev-swap
@@ -474,6 +475,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Sun May 24 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-5
+- rebuilt
+
 * Fri May 22 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-4
 - rebuilt
 
