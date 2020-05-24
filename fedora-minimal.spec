@@ -28,6 +28,7 @@ Requires:	%{name}-conflicts-libreport
 Requires:	%{name}-conflicts-managed-client
 Requires:	%{name}-conflicts-openlmi
 Requires:	%{name}-conflicts-opencl
+Requires:	%{name}-conflicts-ostree
 Requires:	%{name}-conflicts-packagekit
 Requires:	%{name}-conflicts-python2
 Requires:	%{name}-conflicts-setroubleshoot
@@ -257,6 +258,12 @@ Conflicts:	opencl-filesystem
 %description	conflicts-opencl
 Conflicts with OpenCL set of packages
 
+%package	conflicts-ostree
+Summary:	Keeps ostree tools off
+Conflicts:	ostree-libs
+%description	conflicts-ostree
+Conflicts with ostree set of packages
+
 %package	conflicts-packagekit
 Summary:	Keeps PackageKit off
 Conflicts:	PackageKit-glib
@@ -452,6 +459,7 @@ modprobe -r btusb
 %files		conflicts-managed-client
 %files		conflicts-openlmi
 %files		conflicts-opencl
+%files		conflicts-ostree
 %files		conflicts-packagekit
 %files		conflicts-python2
 %files		conflicts-selinux-advanced-tools
