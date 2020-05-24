@@ -307,6 +307,7 @@ Conflicts:	libsss_certmap
 Conflicts:	libsss_idmap
 Conflicts:	libsss_nss_idmap
 Conflicts:	libsss_sudo libsss_autofs
+Conflicts:	libipa_hbac
 Conflicts:	c-ares
 Conflicts:	libdhash
 Conflicts:	http-parser
