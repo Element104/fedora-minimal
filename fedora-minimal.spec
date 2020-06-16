@@ -1,6 +1,6 @@
 Name:		fedora-minimal
 Version:	0.32
-Release:	5%{?dist}
+Release:	6%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -22,6 +22,7 @@ Requires:	%{name}-conflicts-cockpit
 Requires:	%{name}-conflicts-docker
 Requires:	%{name}-conflicts-efi
 Requires:	%{name}-conflicts-fingerprint
+Requires:	%{name}-conflicts-ipsec
 Requires:	%{name}-conflicts-kdegames
 Requires:	%{name}-conflicts-languages
 Requires:	%{name}-conflicts-libreport
@@ -192,6 +193,12 @@ Conflicts:	fprintd
 Conflicts:	libfprint
 %description	conflicts-fingerprint
 Conflicts with finger print reader tools.
+
+%package	conflicts-ipsec
+Summary:	keeps ipsec tools out
+Conflicts:	trousers-lib
+%description	conflicts-ipsec
+Conflicts with ipsec tools.
 
 %package	conflicts-gnome
 Summary:	Keeps some unneeded Gnome packages off
@@ -453,6 +460,7 @@ modprobe -r btusb
 %files		conflicts-docker
 %files		conflicts-efi
 %files		conflicts-fingerprint
+%files		conflicts-ipsec
 %files		conflicts-gnome
 %files		conflicts-kdegames
 %files		conflicts-languages
@@ -475,6 +483,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Tue Jun 16 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-6
+- rebuilt
+
 * Sun May 24 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-5
 - rebuilt
 
