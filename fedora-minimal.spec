@@ -223,6 +223,7 @@ Conflicts with kdegames and their dependencies.
 Summary:	Keeps non english language support off
 Conflicts:	system-config-language
 Conflicts:	libkkc, libkkc-common
+Conflicts:	ibus-hangul
 %description	conflicts-languages
 Conflicts with various packages related to internatialization.
 
