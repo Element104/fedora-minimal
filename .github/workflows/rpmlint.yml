@@ -8,11 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
     steps:
 
     - name: Install rpmlint
       run: |
-        sudo apt-get -y install rpmlint
+        sudo dnf -y install rpmlint
 
     - uses: actions/checkout@v2
 
