@@ -31,6 +31,7 @@ dnf install --allowerasing \
     fedora-minimal-conflicts-client-tools \
     fedora-minimal-conflicts-languages \
     fedora-minimal-conflicts-old-hw-support \
+    fedora-minimal-conflicts-ostree \
     fedora-minimal-conflicts-abrt \
     fedora-minimal-conflicts-libreport \
     fedora-minimal-conflicts-btrfs
