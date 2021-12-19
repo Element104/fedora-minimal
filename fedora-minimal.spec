@@ -1,6 +1,6 @@
 Name:		fedora-minimal
-Version:	0.32
-Release:	6%{?dist}
+Version:	0.35
+Release:	1%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -485,6 +485,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Sun Dec 19 2021 Šimon Lukašík <slukasik@redhat.com> - 0.32-7
+- rebuilt for f35
+
 * Tue Jun 16 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-6
 - rebuilt
 
