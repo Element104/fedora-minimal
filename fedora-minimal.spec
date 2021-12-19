@@ -310,7 +310,6 @@ Summary:	Keeps sssd off
 Conflicts:	sssd
 Conflicts:	sssd-ipa sssd-krb5 sssd-krb5-common sssd-ldap
 Conflicts:	adcli
-Conflicts:	cyrus-sasl-gssapi
 Conflicts:	lubipa_hbac
 Conflicts:	python3-sssdconfig
 Conflicts:	sssd-client
@@ -319,7 +318,6 @@ Conflicts:	sssd-common-pac
 Conflicts:	sssd-kcm
 Conflicts:	sssd-proxy
 Conflicts:	sssd-nfs-idmap
-Conflicts:	libnfsidmap
 Conflicts:	libsss_certmap
 Conflicts:	libsss_idmap
 Conflicts:	libsss_nss_idmap
