@@ -41,7 +41,7 @@ Requires:	%{name}-conflicts-network-tools
 Requires:	%{name}-conflicts-misc
 Requires:	%{name}-disable-services
 Requires:	%{name}-conflicts-old-hw-support
-Obsoletes:	%{name}-conflicts-dnf
+Obsoletes:	%{name}-conflicts-dnf <= 0:0.32
 #TODO genisoimage
 
 %description

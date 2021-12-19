@@ -1,0 +1,23 @@
+name: RPM Lint
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
+    steps:
+
+    - name: Install rpmlint
+      run: |
+        sudo dnf -y install rpmlint
+
+    - uses: actions/checkout@v2
+
+    - name: rpmlint
+      run: |
+        rpmlint --verbose fedora-minimal.spec
