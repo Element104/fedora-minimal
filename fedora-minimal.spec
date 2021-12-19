@@ -36,6 +36,7 @@ Requires:	%{name}-conflicts-setroubleshoot
 Requires:	%{name}-conflicts-selinux-advanced-tools
 Requires:	%{name}-conflicts-sssd
 Requires:	%{name}-conflicts-vmguest
+Requires:	%{name}-conflicts-vmhost
 Requires:	%{name}-conflicts-network-services
 Requires:	%{name}-conflicts-network-tools
 Requires:	%{name}-conflicts-misc
@@ -140,9 +141,7 @@ Conflicts:	libcue
 Conflicts:	libgexiv2
 Conflicts:	libgrss
 Conflicts:	libiptcdata
-Conflicts:	libosinfo
 Conflicts:	libtracker-miner
-Conflicts:	osinfo-db-tools
 Conflicts:	imwheel
 %description	conflicts-clever-desktop
 Conflicts with various desktop trackers, file system indexers, metadata search...
@@ -341,6 +340,15 @@ Conflicts:	hyperv-daemons-license
 %description	conflicts-vmguest
 Conflicts with packages related to VM guests.
 
+%package	conflicts-vmhost
+Summary:	Keeps vm host tools off
+Conflicts:	cyrus-sasl-gssapi
+Conflicts:	libnfsidmap
+Conflicts:	libosinfo
+Conflicts:	osinfo-db-tools
+%description	conflicts-vmhost
+Conflicts with packages related to VM host.
+
 %package	conflicts-network-services
 Summary:	Keeps network services off my notebook
 Conflicts:	gssproxy
@@ -475,6 +483,7 @@ modprobe -r btusb
 %files		conflicts-setroubleshoot
 %files		conflicts-sssd
 %files		conflicts-vmguest
+%files		conflicts-vmhost
 %files		conflicts-network-services
 %files		conflicts-network-tools
 %files		conflicts-misc
