@@ -1,0 +1,27 @@
+name: RPM Install
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
+    steps:
+
+    - name: Install rpm-build
+      run: |
+        sudo dnf -y install rpm-build
+
+    - uses: actions/checkout@v2
+
+    - name: rpmbuild
+      run: |
+        rpmbuild -ba ./fedora-minimal.spec
+
+    - name: install
+      run: |
+        sudo dnf install -y $HOME/rpmbuild/RPMS/noarch/fedora-minimal*
