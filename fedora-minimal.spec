@@ -353,7 +353,7 @@ Conflicts with packages related to VM host.
 Summary:	Keeps network services off my notebook
 Conflicts:	gssproxy
 Conflicts:	nfs-utils rpcbind
-Conflicts:	libevent libverto-libev
+Conflicts:	libverto-libev
 Conflicts:	samba-libs samba-client-libs samba-common
 Conflicts:	cifs-utils libwbclient
 Conflicts:	keyutils
