@@ -110,6 +110,7 @@ Conflicts:	libblockdev-crypto volume_key-libs
 Conflicts:	libblockdev-utils
 Conflicts:	libudisks2
 Conflicts:	libbytesize
+Conflicts:	langtable
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
 
