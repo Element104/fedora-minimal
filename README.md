@@ -25,10 +25,18 @@ dnf search fedora-minimal-conflicts- 2> /dev/null | perl -ne 's/\.noarch\s*// an
 ### Install some parts of Fedora Minimal (removing some unneeded packages)
 Based on the output above
 ```
-dnf install fedora-minimal-conflicts-vmguest fedora-minimal-conflicts-cloud-iaas fedora-minimal-conflicts-client-tools fedora-minimal-conflicts-languages fedora-minimal-conflicts-old-hw-support fedora-minimal-conflicts-abrt fedora-minimal-conflicts-libreport fedora-minimal-conflicts-btrfs
+dnf install --allowerasing \
+    fedora-minimal-conflicts-vmguest \
+    fedora-minimal-conflicts-cloud-iaas \
+    fedora-minimal-conflicts-client-tools \
+    fedora-minimal-conflicts-languages \
+    fedora-minimal-conflicts-old-hw-support \
+    fedora-minimal-conflicts-abrt \
+    fedora-minimal-conflicts-libreport \
+    fedora-minimal-conflicts-btrfs
 ```
 
 ### Install all of the fedora-minimal (hard-core option)
 ```
-dnf install fedora-minimal
+dnf install --allowerasing fedora-minimal
 ```
