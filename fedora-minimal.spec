@@ -324,7 +324,6 @@ Conflicts:	libsss_sudo libsss_autofs
 Conflicts:	libipa_hbac
 Conflicts:	c-ares
 Conflicts:	libdhash
-Conflicts:	http-parser
 %description	conflicts-sssd
 Conflicts with setroubleshoot packages.
 
